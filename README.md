@@ -27,71 +27,50 @@ In our model, the trajectory of an F1 car is influenced by the braking force app
 
 ### Forces and Angles
 The primary forces acting on an F1 car are the braking force $F_b$ and the maximum static friction force $F_s$. The maximum static friction force is calculated using:
-\begin{align}
+
 
 $F_s = \mu_s \cdot m \cdot g$
-\end{align}
+
 
 where $\mu_s$ is the coefficient of static friction, $(m)$ is the mass of the car, and $(g)$ is the acceleration due to gravity.
 
 The turning force $(F_t)$ is derived from $(F_s)$ and $(F_b)$ using the equation:
 
-\begin{align}
- F_t = \sqrt{F_s^2 - F_b^2}
-\end{align}
+
+ $F_t = \sqrt{F_s^2 - F_b^2}$
+
 
 The acceleration components in the x and y directions are determined by the combined effect of $(F_t)$ and $(F_b)$ at a given angle $(\theta)$:
-\begin{align}
- a_x = \frac{F_t \sin(\theta) - F_b \cos(\theta)}{m}
-\end{align}
-\begin{align}
- a_y = \frac{-F_t \cos(\theta) - F_b \sin(\theta)}{m}
-\end{align}
+
+ $a_x = \frac{F_t \sin(\theta) - F_b \cos(\theta)}{m}$
+
+ $a_y = \frac{-F_t \cos(\theta) - F_b \sin(\theta)}{m}$
+
 
 ## Numerical Model
 The trajectory of the car is simulated using numerical integration. The initial conditions include the initial position \($x_0$, $y_0$\) and initial velocity $v_0$ with components:
-\begin{align}
- v_{x0} = v_0 \cos(\theta)
-\end{align}
-\begin{align}
-  v_{y0} = v_0 \sin(\theta)
-\end{align}
+
+ $v_{x0} = v_0 \cos(\theta)$
+
+  $v_{y0} = v_0 \sin(\theta)$
+
 
 ### Equations of Motion
 The equations of motion are updated at each time step $\Delta$ using:
-\begin{align}
- x_{i+1} = x_i + v_{xi} \Delta t
- \end{align}
- \begin{align}
- y_{i+1} = y_i + v_{yi} \Delta t
- \end{align}
- \begin{align}
- v_{xi+1} = v_{xi} + a_{xi} \Delta t
- \end{align}
- \begin{align}
- v_{yi+1} = v_{yi} + a_{yi} \Delta t
- \end{align}
+$ x_{i+1} = x_i + v_{xi} \Delta t$
+ $y_{i+1} = y_i + v_{yi} \Delta t$
+ $v_{xi+1} = v_{xi} + a_{xi} \Delta t$
+ $v_{yi+1} = v_{yi} + a_{yi} \Delta t$
 
 The angle $(\theta)$ of the velocity vector is updated using:
- \begin{align}
-\theta = \tan^{-1}\left(\frac{v_y}{v_x}\right)
- \end{align}
+$\theta = \tan^{-1}\left(\frac{v_y}{v_x}\right)$
 
 ### Numerical Integration Method
 We employ Euler's method to solve the equations of motion. Euler's method updates the position and velocity iteratively:
- \begin{align}
-x_{i+1} = x_i + v_{xi} \Delta t
- \end{align}
- \begin{align}
-y_{i+1} = y_i + v_{yi} \Delta t
- \end{align}
- \begin{align}
-v_{xi+1} = v_{xi} + a_{xi} \Delta t
- \end{align}
- \begin{align}
-v_{yi+1} = v_{yi} + a_{yi} \Delta t
- \end{align}
-
+$x_{i+1} = x_i + v_{xi} \Delta t$
+$y_{i+1} = y_i + v_{yi} \Delta t$
+$v_{xi+1} = v_{xi} + a_{xi} \Delta t$
+$v_{yi+1} = v_{yi} + a_{yi} \Delta t$
 The simulation runs until the car's velocity is close to zero or predefined conditions are met (e.g., specific $x$ and $y$ positions).
 
 ## Simulation and Results
