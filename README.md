@@ -28,7 +28,8 @@ In our model, the trajectory of an F1 car is influenced by the braking force app
 ### Forces and Angles
 The primary forces acting on an F1 car are the braking force $F_b$ and the maximum static friction force $F_s$. The maximum static friction force is calculated using:
 \begin{align}
-F_s = \mu_s \cdot m \cdot g
+
+$F_s = \mu_s \cdot m \cdot g$
 \end{align}
 
 where $\mu_s$ is the coefficient of static friction, $(m)$ is the mass of the car, and $(g)$ is the acceleration due to gravity.
