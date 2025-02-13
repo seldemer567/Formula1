@@ -57,13 +57,13 @@ The trajectory of the car is simulated using numerical integration. The initial 
 
 ### Equations of Motion
 The equations of motion are updated at each time step $\Delta$ using:
-$ x_{i+1} = x_i + v_{xi} \Delta t$
- $y_{i+1} = y_i + v_{yi} \Delta t$
- $v_{xi+1} = v_{xi} + a_{xi} \Delta t$
- $v_{yi+1} = v_{yi} + a_{yi} \Delta t$
+$ x_{i+1} = x_i + v_{xi} $\Delta$ t$
+ $y_{i+1} = y_i + v_{yi} $\Delta$ t$
+ $v_{xi+1} = v_{xi} + a_{xi} $\Delta$ t$
+ $v_{yi+1} = v_{yi} + a_{yi} $\Delta$ t$
 
 The angle $(\theta)$ of the velocity vector is updated using:
-$\theta = \tan^{-1}\left(\frac{v_y}{v_x}\right)$
+$\theta$ = $\tan^{-1}\left(\frac{v_y}{v_x}\right)$
 
 ### Numerical Integration Method
 We employ Euler's method to solve the equations of motion. Euler's method updates the position and velocity iteratively:
