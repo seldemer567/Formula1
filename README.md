@@ -1,5 +1,5 @@
 # Formula1
-Formula 1 car trajectory in a 90 degree curve.
+Formula 1 car trajectory in a 90 degree curve. Which breaking force is the best when working with an initial velocity and angle?
 # Introduction
 Formula One is not as simple as most may think; these professional drivers’ goal isn’t simply to get in the car and drive as fast as possible until the checkered flag is thrown; 
 there is a science behind F1. The shape of the car is one of the most important aspects of Formula One driving; it affects the way air flows around the car, and as simple as it sounds, it isn’t.  
